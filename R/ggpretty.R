@@ -46,13 +46,16 @@ ggpretty <- function(font = "Muli") {
     #Text format:
     #This sets the font, size, type and colour of text for the chart's title
     plot.title = ggplot2::element_text(family=font,
-                                       size=25,
+                                       size=16,
                                        face="bold",
-                                       color="#377460"),
+                                       color="#377460",
+                                       margin=ggplot2::margin(0,0,0,0),
+                                       hjust = 0),
+    plot.title.position = "plot",
     #This sets the font, size, type and colour of text for the chart's subtitle, as well as setting a margin between the title and the subtitle
     plot.subtitle = ggplot2::element_text(family=font,
-                                          size=20,
-                                          margin=ggplot2::margin(9,0,9,0)),
+                                          size=14,
+                                          margin=ggplot2::margin(9,0,0,0)),
     plot.caption = ggplot2::element_blank(),
     #This leaves the caption text element empty, because it is set elsewhere in the finalise plot function
 
@@ -64,16 +67,16 @@ ggpretty <- function(font = "Muli") {
     legend.title = ggplot2::element_blank(),
     legend.key = ggplot2::element_blank(),
     legend.text = ggplot2::element_text(family=font,
-                                        size=20,
+                                        size=12,
                                         color="#222222"),
 
     #Axis format
     #This sets the text font, size and colour for the axis test, as well as setting the margins and removes lines and ticks. In some cases, axis lines and axis ticks are things we would want to have in the chart - the cookbook shows examples of how to do so.
-    axis.title = ggplot2::element_text(size = 18),
+    axis.title = ggplot2::element_text(size = 12),
     axis.text = ggplot2::element_text(family=font,
-                                      size=18,
+                                      size=12,
                                       color="#222222"),
-    axis.text.x = ggplot2::element_text(margin=ggplot2::margin(5, b = 10), size = 20),
+    axis.text.x = ggplot2::element_text(margin=ggplot2::margin(5, b = 10), size = 12),
     axis.ticks = ggplot2::element_blank(),
     axis.line = ggplot2::element_blank(),
 
@@ -89,7 +92,7 @@ ggpretty <- function(font = "Muli") {
 
     #Strip background (#This sets the panel background for facet-wrapped plots to white, removing the standard grey ggplot background colour and sets the title size of the facet-wrap title to font size 20)
     strip.background = ggplot2::element_rect(fill="white"),
-    strip.text = ggplot2::element_text(size  = 20,  hjust = 0)
+    strip.text = ggplot2::element_text(size  = 14,  hjust = 0)
   )
 
 

@@ -13,14 +13,14 @@ dectech_colors <- c(
 
 #' Function to extract dectech colors as hex codes
 #'
-#' @param ... Character names of dectech_colors 
+#' @param ... Character names of dectech_colors
 #'
 dectech_cols <- function(...) {
   cols <- c(...)
-  
+
   if (is.null(cols))
     return (dectech_colors)
-  
+
   dectech_colors[cols]
 }
 
@@ -31,9 +31,9 @@ library(ggplot2)
 #Develop a pallete for future use
 dectech_palettes <- list(
   `main`  = dectech_cols("cool grey", "dectech green", "cool grey"),
-  
+
   `mixed` = dectech_cols("dectech navy", "purple",  "yellow", "dectech green"),
-  
+
   `grey`  = dectech_cols("light grey", "cool grey")
 )
 
@@ -46,14 +46,14 @@ dectech_palettes <- list(
 #'
 dectech_pal <- function(palette = "main", reverse = FALSE, ...) {
   pal <- dectech_palettes[[palette]]
-  
+
   if (reverse) pal <- rev(pal)
-  
+
   colorRampPalette(pal, ...)
 }
 
 
-#' Color scale constructor for drsimonj colors
+#' Color scale constructor for dectech colors
 #'
 #' @param palette Character name of palette in drsimonj_palettes
 #' @param discrete Boolean indicating whether color aesthetic is discrete or not
@@ -63,7 +63,7 @@ dectech_pal <- function(palette = "main", reverse = FALSE, ...) {
 #'
 scale_color_dectech <- function(palette = "mixed", discrete = TRUE, reverse = FALSE, ...) {
   pal <- dectech_pal(palette = palette, reverse = reverse)
-  
+
   if (discrete) {
     discrete_scale("colour", paste0("dectech_", palette), palette = pal, ...)
   } else {
@@ -81,7 +81,7 @@ scale_color_dectech <- function(palette = "mixed", discrete = TRUE, reverse = FA
 #'
 scale_fill_dectech <- function(palette = "mixed", discrete = TRUE, reverse = FALSE, ...) {
   pal <- dectech_pal(palette = palette, reverse = reverse)
-  
+
   if (discrete) {
     discrete_scale("fill", paste0("dectech_", palette), palette = pal, ...)
   } else {

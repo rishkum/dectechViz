@@ -5,6 +5,7 @@ save_plot <- function (plot_grid, width, height, save_filepath) {
                   plot=plot_grid, width=(width/72), height=(height/72),  bg="white")
 }
 
+
 #Left align text
 left_align <- function(plot_name, pieces){
   grob <- ggplot2::ggplotGrob(plot_name)
@@ -20,7 +21,7 @@ generate_footer <- function (source_name, logo_image_path) {
                                           x = 0.004, hjust = 0, gp = grid::gpar(fontsize=12)),
                            grid::rasterGrob(png::readPNG(logo_image_path), x = 0.944))
   return(footer)
-  
+
 }
 
 #' Arrange alignment and save BBC ggplot chart
@@ -53,9 +54,9 @@ finalise_plot <- function(plot_name,
                           width_pixels=640,
                           height_pixels=450,
                           logo_image_path = file.path(system.file("data", package = 'bbplot'),"placeholder.png")) {
-  
+
   footer <- generate_footer(source_name, logo_image_path)
-  
+
   #Draw your left-aligned grid
   plot_left_aligned <- left_align(plot_name, c("subtitle", "title", "caption"))
   plot_grid <- ggpubr::ggarrange(plot_left_aligned, footer,
