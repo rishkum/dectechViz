@@ -55,7 +55,7 @@ dectech_pal <- function(palette = "main", reverse = FALSE, ...) {
 
 #' Color scale constructor for dectech colors
 #'
-#' @param palette Character name of palette in drsimonj_palettes
+#' @param palette Character name of palette in dectech_palettes
 #' @param discrete Boolean indicating whether color aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale() or
@@ -71,9 +71,9 @@ scale_color_dectech <- function(palette = "mixed", discrete = TRUE, reverse = FA
   }
 }
 
-#' Fill scale constructor for drsimonj colors
+#' Fill scale constructor for dectech colors
 #'
-#' @param palette Character name of palette in drsimonj_palettes
+#' @param palette Character name of palette in dectech_palettes
 #' @param discrete Boolean indicating whether color aesthetic is discrete or not
 #' @param reverse Boolean indicating whether the palette should be reversed
 #' @param ... Additional arguments passed to discrete_scale() or
