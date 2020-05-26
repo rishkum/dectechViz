@@ -1,5 +1,5 @@
 #example
-
+require(ggplot2)
 p1 <- ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
   geom_point(size = 4) + geom_smooth(method=lm,se=FALSE, aes(group=1), ) +
   scale_color_dectech()
