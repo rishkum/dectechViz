@@ -6,6 +6,6 @@ p1 <- ggplot(iris, aes(Sepal.Width, Sepal.Length, color = Species)) +
 
 #p1 <- ggpretay(p1, title= "Colour", xaxis = "coloir", yaxis = "vof")
 
-gg_check(p1)
+#gg_check(p1)
 
-finalise_plot(p1, source_name = "Dectech Research", logo_image_path = "dtech.png")
+#finalise_plot(p1, source_name = "Dectech Research", logo_image_path = "dtech.png")
