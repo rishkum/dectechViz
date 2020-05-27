@@ -18,8 +18,8 @@ ggpretay <- function(plot, title = "Enter Title",
                      yaxis = " enter y") {
   plot +
     ggnewlabs(title = title, subtitle = subtitle) +
-    ggplot2::xlabs(xaxis = xaxis ) +
-    ggplot2::ylabs(yaxis = yaxis) + ggpretty()
+    ggplot2::xlab(xaxis = xaxis ) +
+    ggplot2::ylab(yaxis = yaxis) + ggpretty()
 
 }
 
