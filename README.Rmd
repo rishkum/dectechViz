@@ -8,24 +8,26 @@ output: rmarkdown::github_document
 
 An R package to to make your graphs prettier quickly. This is still a work in progress so bear with me. 
 
-```{r ggplot2 , eval=TRUE, echo=T}
+```{r ggplot2 , eval=TRUE, echo=T, error=F}
 library(ggplot2)
 p1 <- ggplot(diamonds, aes(price, cut)) + geom_bar(stat = "summary", fun.x = "mean" )
 p1
 ```
 
 
-```{r eval=TRUE, echo=T}
+```{r eval=TRUE, echo=T, warning=FALSE}
+remotes::install_github("rishkum/dectechViz")
+library(dectechViz)
 p2 <- ggplot(diamonds, aes(price, cut)) + geom_bar(stat = "summary" ,fill = dectech_cols("dectech green"))
 p2
 
 ```
 ```{r eval=TRUE, echo=T}
-p2 <- ggpretay(p)
-p
+p2 <- ggpretay(p2)
+p2
 ```
 
-```{r eval=F, echo=T}
+```{r eval=F, echo=T, warning=FALSE}
 library(gridExtra)
 grid.arrange(p1, p2, ncol = 2)
 
