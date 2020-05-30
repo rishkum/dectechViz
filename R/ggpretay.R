@@ -1,25 +1,24 @@
 #' Add pretty theme to ggplot chart
 #'
-#' This function allows you to add the bbc theme to your ggplotgraphics.
-#' @keywords bbc_style
+#' This function allows you to add the dectech theme to your ggplotgraphics.
+#' @keywords
 #' @export
 #' @examples
 #' line <- ggplot(line_df, aes(x = year, y = lifeExp)) +
 #' geom_line(colour = "#007f7f", size = 1) +
 #' geom_hline(yintercept = 0, size = 1, colour="#333333") +
-#' bbc_style()
 
-
+require(sysfonts)
 sysfonts::font_add_google("Muli")
 
-ggpretay <- function(plot, title = "Enter Title",
-                     subtitle = " Enter Subtitle",
+ggpretay <- function(plot, title = "Enter a provocative title",
+                     subtitle = "Enter Subtitle which explains the graphs",
                      xaxis = " enter x",
                      yaxis = " enter y") {
   plot +
     ggnewlabs(title = title, subtitle = subtitle) +
-    ggplot2::xlab(xaxis = xaxis ) +
-    ggplot2::ylab(yaxis = yaxis) + ggpretty()
+    ggplot2::xlab(xaxis) +
+    ggplot2::ylab(yaxis) + ggpretty()
 
 }
 
