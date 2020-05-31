@@ -6,7 +6,7 @@ Rishabh Kumar
 ## dectechViz
 
 An R package to to make your graphs prettier quickly. This is still a
-work in progress so bear with me.
+work in progress so bear with me. Here is the standard version to make your graphs using ggplot2.
 
 ``` r
 library(ggplot2)

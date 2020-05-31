@@ -2,6 +2,8 @@
 
 gg_check <- function(gg, dict, ignore) {
 
+
+
   require("hunspell", "hunspell")
   require("stringi", "stri_extract_all_words")
 
